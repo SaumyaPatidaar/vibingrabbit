@@ -388,10 +388,10 @@ async def play_commnd(
                 "f" if fplay else "d",
             )
             await mystic.delete()
-            await message.reply_photo(
-                photo=img,
-                caption=cap,
+            await message.reply_text(
+                text=cap,
                 reply_markup=InlineKeyboardMarkup(buttons),
+                disable_web_page_preview=True
             )
             return await play_logs(message, streamtype=f"Playlist : {plist_type}")
         else:
@@ -406,13 +406,13 @@ async def play_commnd(
                     "f" if fplay else "d",
                 )
                 await mystic.delete()
-                await message.reply_photo(
-                    photo=details["thumb"],
-                    caption=_["play_10"].format(
+                await message.reply_text(
+                    text=_["play_10"].format(
                         details["title"].title(),
                         details["duration_min"],
                     ),
                     reply_markup=InlineKeyboardMarkup(buttons),
+                    disable_web_page_preview=True
                 )
                 return await play_logs(message, streamtype=f"Searched on Youtube")
             else:
@@ -424,10 +424,10 @@ async def play_commnd(
                     "f" if fplay else "d",
                 )
                 await mystic.delete()
-                await message.reply_photo(
-                    photo=img,
-                    caption=cap,
+                await message.reply_text(
+                    text=cap,
                     reply_markup=InlineKeyboardMarkup(buttons),
+                    disable_web_page_preview=True
                 )
                 return await play_logs(message, streamtype=f"URL Searched Inline")
 
@@ -661,3 +661,4 @@ async def slider_queries(client, CallbackQuery, _):
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
         )
+
