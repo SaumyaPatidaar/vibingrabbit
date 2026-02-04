@@ -628,7 +628,7 @@ async def slider_queries(client, CallbackQuery, _):
             await CallbackQuery.answer(_["playcb_2"])
         except:
             pass
-        title, duration_min, thumbnail = "", vidid = await YouTube.slider(query, query_type)
+        title, duration_min, thumbnail, vidid = await YouTube.slider(query, query_type)
         buttons = slider_markup(_, vidid, user_id, query, query_type, cplay, fplay)
         cap=_["play_10"].format(
                 title.title(),
@@ -648,7 +648,7 @@ async def slider_queries(client, CallbackQuery, _):
             await CallbackQuery.answer(_["playcb_2"])
         except:
             pass
-        title, duration_min, thumbnail = "", vidid = await YouTube.slider(query, query_type)
+        title, duration_min, thumbnail, vidid = await YouTube.slider(query, query_type)
         buttons = slider_markup(_, vidid, user_id, query, query_type, cplay, fplay)
         cap=_["play_10"].format(
                 title.title(),
@@ -659,6 +659,7 @@ async def slider_queries(client, CallbackQuery, _):
             media=med, reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )
+
 
 
 
