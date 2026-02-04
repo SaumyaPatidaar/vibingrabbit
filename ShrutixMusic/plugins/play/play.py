@@ -389,7 +389,7 @@ async def play_commnd(
             )
             await mystic.delete()
             await message.reply_text(
-                text=cap,
+                cap,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 disable_web_page_preview=True
             )
@@ -407,7 +407,7 @@ async def play_commnd(
                 )
                 await mystic.delete()
                 await message.reply_text(
-                    text=_["play_10"].format(
+                    _["play_10"].format(
                         details["title"].title(),
                         details["duration_min"],
                     ),
@@ -425,7 +425,7 @@ async def play_commnd(
                 )
                 await mystic.delete()
                 await message.reply_text(
-                    text=cap,
+                    cap,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     disable_web_page_preview=True
                 )
@@ -661,4 +661,5 @@ async def slider_queries(client, CallbackQuery, _):
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
         )
+
 
