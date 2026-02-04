@@ -114,8 +114,7 @@ async def get_thumb(videoid):
             os.remove(f"cache/thumb{videoid}.png")
         except:
             pass
-        background.save(f"cache/{videoid}.png")
-        return f"cache/{videoid}.png"
+        return None
     except Exception as e:
         print(e)
         return YOUTUBE_IMG_URL
